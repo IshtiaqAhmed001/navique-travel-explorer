@@ -6,6 +6,35 @@ import { MdOutlineShoppingCart, MdOutlineSchedule } from "react-icons/md";
 import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 import { getSingleProduct } from "@/actions/server/travelPackage";
 
+export async function generateMetadata({ params }) {
+    const {id}= await params;
+  const pkg = await getSingleProduct(id);
+  if (!pkg) return { title: "Package Not Found | Navique" };
+
+  return {
+    title: `${pkg.title} | Navique`,
+    description: pkg.description.slice(0, 150),
+    alternates: {
+      canonical: `https://navique.vercel.app/packages/${params.id}`,
+    },
+    openGraph: {
+      title: `${pkg.title} | Navique`,
+      description: pkg.description.slice(0, 150),
+      url: `https://navique.vercel.app/packages/${params.id}`,
+      siteName: "Navique",
+      images: [{ url: pkg.image, width: 1200, height: 630, alt: pkg.title }],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${pkg.title} | Navique`,
+      description: pkg.description.slice(0, 150),
+      images: [pkg.image],
+    },
+  };
+}
+
+
 const PackageDetails = async ({ params }) => {
     const {id}= await params;
     const pkg = await getSingleProduct(id);

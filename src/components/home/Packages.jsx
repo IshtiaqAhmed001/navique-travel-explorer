@@ -4,7 +4,7 @@ import PackageCard from '../cards/PackageCard';
 import { getProducts } from '@/actions/server/travelPackage';
 
 const Packages = async () => {
-    const packages = (await getProducts() || []);
+    const packages = await getProducts() || [];
     return (
       <div>
         <h2 className="text-center text-4xl font-bold mb-10">Our Packages</h2>
