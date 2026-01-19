@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+   themes: light --default;
+ }
+
+ @plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  
+  /* Brand */
+--color-primary: oklch(50% 0.25 220);    /* Deep Ocean Blue - premium, trustworthy */
+--color-secondary: oklch(60% 0.10 40);   /* Sandstone Beige - soft, elegant contrast */
+--color-accent: oklch(75% 0.15 90);      /* Warm Sunrise Gold - subtle highlight */
+
+/* Base */
+--color-base-100: oklch(100% 0 0);       /* Pure White */
+--color-base-200: oklch(97% 0.02 95);    /* Very Light Cream */
+--color-base-300: oklch(92% 0.015 95);   /* Soft Cream / Card Backgrounds */
+
+/* Neutral */
+--color-neutral: oklch(30% 0.01 260);    /* Charcoal / Main Text */
+--color-neutral-content: oklch(98% 0 0); /* White for text on dark surfaces */
+
+/* Feedback */
+--color-success: oklch(65% 0.18 145);    /* Fresh Green - modern & friendly */
+--color-error: oklch(60% 0.22 25);       /* Coral Red - subtle but visible */
+
+}
+
+@custom-variant dark (&:where([data-theme=night], [data-theme=night] *));
