@@ -8,22 +8,26 @@
   default: true;
   
   /* Brand */
---color-primary: oklch(50% 0.25 220);    /* Deep Ocean Blue - premium, trustworthy */
---color-secondary: oklch(60% 0.10 40);   /* Sandstone Beige - soft, elegant contrast */
---color-accent: oklch(75% 0.15 90);      /* Warm Sunrise Gold - subtle highlight */
+--color-primary: oklch(50% 0.25 220);    /* Deep Ocean Blue*/
+--color-secondary: oklch(60% 0.10 40);   /* Sandstone Beige - subtle contrast */
+--color-accent: oklch(75% 0.15 90);      /* Warm Sunrise Gold - highlights */
 
-/* Base */
---color-base-100: oklch(100% 0 0);       /* Pure White */
---color-base-200: oklch(97% 0.02 95);    /* Very Light Cream */
---color-base-300: oklch(92% 0.015 95);   /* Soft Cream / Card Backgrounds */
+/* Base / Backgrounds */
+--color-base-100: oklch(98% 0.01 95);    /* Very soft cream / main background */
+--color-base-200: oklch(95% 0.02 95);    /* Slightly darker background / cards */
+--color-base-300: oklch(92% 0.015 95);   /* Card hover / sections */
 
-/* Neutral */
---color-neutral: oklch(30% 0.01 260);    /* Charcoal / Main Text */
---color-neutral-content: oklch(98% 0 0); /* White for text on dark surfaces */
+/* Neutral / Text */
+--color-neutral: oklch(25% 0.01 260);    /* Dark Charcoal - main text */
+--color-neutral-content: oklch(98% 0 0); /* White text for dark backgrounds */
+
+/* Footer / Dark Areas */
+--color-footer: oklch(18% 0.01 260);     /* Darker charcoal for footer background */
+--color-footer-text: oklch(95% 0 0);     /* Soft white for links & text in footer */
 
 /* Feedback */
---color-success: oklch(65% 0.18 145);    /* Fresh Green - modern & friendly */
---color-error: oklch(60% 0.22 25);       /* Coral Red - subtle but visible */
+--color-success: oklch(65% 0.18 145);    /* Fresh Green */
+--color-error: oklch(60% 0.22 25);       /* Coral Red */
 
 }
 
