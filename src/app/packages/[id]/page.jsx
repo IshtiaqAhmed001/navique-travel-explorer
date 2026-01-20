@@ -5,6 +5,7 @@ import Image from "next/image";
 import { MdOutlineShoppingCart, MdOutlineSchedule } from "react-icons/md";
 import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 import { getSingleProduct } from "@/actions/server/travelPackage";
+import CartButton from "@/components/buttons/CartButton";
 
 export async function generateMetadata({ params }) {
     const {id}= await params;
@@ -73,12 +74,9 @@ const PackageDetails = async ({ params }) => {
         <p className="text-gray-600 flex items-center gap-2">
           <MdOutlineSchedule /> Duration: {pkg.duration}
         </p>
-        <div className="flex gap-3">
-          <button className="btn btn-primary flex items-center gap-2">
-            <MdOutlineShoppingCart /> Add to Cart
-          </button>
-          <button className="btn btn-accent">Book Now</button>
-        </div>
+      
+        <CartButton pkg={pkg}></CartButton>
+    
       </div>
 
       {/* Description / Highlights */}

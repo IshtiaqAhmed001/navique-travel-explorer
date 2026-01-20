@@ -8,8 +8,8 @@ const Logo = () => {
       <Image
         alt="logo-navique"
         src={"/assets/logo.png"}
-        width={50}
-        height={40}
+        width={40}
+        height={30}
       />
       <h2 className="text-xl font-bold">
         Navi<span className="text-primary">que</span>

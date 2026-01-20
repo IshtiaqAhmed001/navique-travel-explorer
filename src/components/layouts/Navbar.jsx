@@ -3,6 +3,7 @@ import Logo from '../Logo';
 import NavLink from '../buttons/NavLink';
 import Link from 'next/link';
 import { MdOutlineShoppingCart } from "react-icons/md";
+import AuthButtons from '../buttons/AuthButtons';
 
 
 
@@ -65,9 +66,7 @@ const Navbar = () => {
             <Link href={"/cart"} className="btn btn-primary font-bold ">
               <MdOutlineShoppingCart />
             </Link>
-            <Link href={"/login"}>
-              <button className="btn btn-primary btn-outline">Login</button>
-            </Link>
+          <AuthButtons></AuthButtons>
           </div>
         </div>
       </div>
