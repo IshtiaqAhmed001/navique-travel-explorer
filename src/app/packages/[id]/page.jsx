@@ -74,9 +74,10 @@ const PackageDetails = async ({ params }) => {
         <p className="text-gray-600 flex items-center gap-2">
           <MdOutlineSchedule /> Duration: {pkg.duration}
         </p>
-      
-        <CartButton pkg={pkg}></CartButton>
-    
+
+        <div>
+          <CartButton pkg={pkg}></CartButton>
+        </div>
       </div>
 
       {/* Description / Highlights */}
