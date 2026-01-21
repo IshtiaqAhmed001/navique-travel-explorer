@@ -5,9 +5,11 @@ import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import { signIn } from "next-auth/react";
 import Swal from "sweetalert2";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 const LoginPage = () => {
+  const params = useSearchParams();
+  
   const router = useRouter();
 
   const handleLogin = async (e) => {
@@ -25,14 +27,14 @@ const LoginPage = () => {
     const result = await signIn("credentials", {
       email: userData.email,
       password: userData.password,
-      redirect: false,
+      redirect: true,
+      callbackUrl:params.get('callbackUrl') || "/"
     });
     if(!result.ok){
       Swal.fire("error","Email, Password did not match!","error")
     }
     else{
             Swal.fire("success", "Welcome to Navique!", "success");
-              router.push("/");
     }
   };
   return (

@@ -2,11 +2,15 @@
 
 import { postUser } from "@/actions/server/auth";
 import SocialLogin from "@/components/SocialLogin/SocialLogin";
-import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import { useRouter, useSearchParams } from "next/navigation";
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
+import Swal from "sweetalert2";
 
 const RegisterPage = () => {
+  const params = useSearchParams();
+  const callBackUrl = params.get('callbackUrl') || "/"
   const router = useRouter();
 
   const handleRegister = async(e) => {
@@ -25,8 +29,9 @@ const RegisterPage = () => {
 
     const result = await postUser(userData);
     if(result.acknowledged){
-      alert('Registration successful, please login!')
-      router.push('/login')
+       Swal.fire("success", "Registration successful!", "success");
+      // router.push('/login');
+      const result = await signIn('credentials',{email,password,callbackUrl:callBackUrl})
     }
   };
   return (
